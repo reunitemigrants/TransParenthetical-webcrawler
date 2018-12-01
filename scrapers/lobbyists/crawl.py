@@ -36,7 +36,6 @@ def extract_remote_csv(url):
         if len(filenames) != 1:
             raise RuntimeError("Expected a single file in the zip file. Got: %s" % filenames)
         filename = filenames[0]
-        # import ipdb; ipdb.set_trace()
         with zf.open(filename) as unzipped:
             rows = csv.reader(io.TextIOWrapper(unzipped))
             return [r for r in rows]
