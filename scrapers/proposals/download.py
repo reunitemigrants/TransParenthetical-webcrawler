@@ -29,11 +29,12 @@ def convert_pdf_to_txt(path):
     retstr.close()
     return text
 
-print('Start Convert Pdf to Text')
-text = convert_pdf_to_txt('minutes_test.pdf')
+if __name__ == "__main__":
+	print('Start Convert Pdf to Text')
+	text = convert_pdf_to_txt('minutes_test.pdf')
 
-file = open('output.txt', 'w')
-file.write(text)
-file.close()
+	file = open('output.txt', 'w')
+	file.write(text)
+	file.close()
 
-print('Done Convert Pdf to Text')
+	print('Done Convert Pdf to Text')
