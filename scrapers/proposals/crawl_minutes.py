@@ -1,6 +1,7 @@
 import requests
 import csv
 import re
+import download
 
 # TODO: import this config from a CSV file:
 # location,minutes_url,minutes_regex
@@ -24,14 +25,21 @@ with open('rumor_proposals.csv', mode='w') as proposals_file:
         ## minutesUrl = 'https://charltoncountyga.us/AgendaCenter/'
         ## minutesRegex = '<td class="minutes".+href="/AgendaCenter/(.+?)".+<\/a>'
 
-        r = requests.get(minutesUrl)
+        r = requests.get(minutesUrl, verify=False)
         p = re.compile(minutesRegex)
 
         for minute in p.findall(r.text):
             targetUrl = minutesUrl + minute
             # print(targetUrl)
 
-            # # targetReq = requests.get(targetUrl)
+            targetReq = requests.get(targetUrl, verify=False)
+
+            with open('target.pdf', 'wb') as ff:
+                ff.write(targetReq.content)
+
+            pdf = download.convert_pdf_to_txt('target.pdf')
+            print(pdf)
+
             # # TODO: make call to determine if PDF contains relevant keywords
             relevant = True
 

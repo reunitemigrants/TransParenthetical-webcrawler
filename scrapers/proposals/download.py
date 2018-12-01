@@ -2,9 +2,7 @@ from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
-from io import StringIO
-
-
+from io import StringIO 
 
 def convert_pdf_to_txt(path):
     rsrcmgr = PDFResourceManager()
@@ -30,11 +28,11 @@ def convert_pdf_to_txt(path):
     return text
 
 if __name__ == "__main__":
-	print('Start Convert Pdf to Text')
-	text = convert_pdf_to_txt('minutes_test.pdf')
+    print('Start Convert Pdf to Text')
+    text = convert_pdf_to_txt('minutes_test.pdf')
 
-	file = open('output.txt', 'w')
-	file.write(text)
-	file.close()
+    file = open('output.txt', 'w')
+    file.write(text)
+    file.close()
 
-	print('Done Convert Pdf to Text')
+    print('Done Convert Pdf to Text')
