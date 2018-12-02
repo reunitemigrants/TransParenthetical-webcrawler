@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-$> pip -r requirements.txt`
+$> pip install -r requirements.txt
 ```
 
 ## Getting Started
