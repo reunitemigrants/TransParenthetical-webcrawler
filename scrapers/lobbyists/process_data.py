@@ -7,7 +7,7 @@ import zipfile
 # local modules
 import constants
 
-# The committee ids. Can be found from the committees CSV file
+# The committee ids. Can be found in the constants.COMMITTEES_FILENAME CSV file
 PAC_IDS = {
     "C00208322",  # MANAGEMENT AND TRAINING CORPORATION POLITICAL ACTION COMMITTEE
     "C00366468",  # CORECIVIC, INC. POLITICAL ACTION COMMITTEE
