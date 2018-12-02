@@ -1,0 +1,4 @@
+pdfminer.six==20181108
+rake_nltk==1.0.4
+pdfminer==20140328
+Requests==2.20.1

@@ -1,3 +1,19 @@
+prototype UI for TransParenthetical - a way to show alerts of potential focus areas for ICE detention facility news.
+
+To use this in development, run npm start.
+To deploy run npm run build, and take the content in "build" for usage.
+
+check src/App.js for the base code for the app.  Styles are in index.css.
+
+main TODOS:
+- connect to real data - potentially fetch .csv files from public folder, and analyze data
+- add reactive UI - add filtering
+- sort by date
+
+
+
+default Create React App README follows:
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

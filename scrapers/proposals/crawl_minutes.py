@@ -1,20 +1,14 @@
 import requests
 import csv
 import re
-import download
-
+import get_words
+import words
+import json
 # TODO: import this config from a CSV file:
 # location,minutes_url,minutes_regex
-sources = [
-    ["Jerome County, Idaho",
-    "https://www.jeromecountyid.us/AgendaCenter/",
-    "<td class=\"minutes\".+href=\"/AgendaCenter/(.+?)\".+<\/a>"],
 
-    ["Charlton County, Georgia",
-    "https://charltoncountyga.us/AgendaCenter/",
-    "<td class=\"minutes\".+href=\"/AgendaCenter/(.+?)\".+<\/a>"]
-]
-
+with open('sources.json') as jt:
+    sources = json.loads(jt.read())
 
 with open('rumor_proposals.csv', mode='w') as proposals_file:
 
@@ -23,7 +17,7 @@ with open('rumor_proposals.csv', mode='w') as proposals_file:
 
     for [location, minutesUrl, minutesRegex] in sources:
         ## minutesUrl = 'https://charltoncountyga.us/AgendaCenter/'
-        ## minutesRegex = '<td class="minutes".+href="/AgendaCenter/(.+?)".+<\/a>'
+        ## minutesRegex = '<td class="minutes".+href="/AgendaCenter/(.+?)".+<\/ajt
 
         r = requests.get(minutesUrl, verify=False)
         p = re.compile(minutesRegex)
@@ -37,11 +31,11 @@ with open('rumor_proposals.csv', mode='w') as proposals_file:
             with open('target.pdf', 'wb') as ff:
                 ff.write(targetReq.content)
 
-            pdf = download.convert_pdf_to_txt('target.pdf')
-            print(pdf)
+            keywords = get_words.get_keywords_from_file('target.pdf')
+            
 
             # # TODO: make call to determine if PDF contains relevant keywords
-            relevant = True
+            relevant = words.contains_keywords(keywords)
 
             if relevant:
                 csvwriter.writerow(['DATE', 'proposals', targetUrl, location, 'BLOB_TEXT'])

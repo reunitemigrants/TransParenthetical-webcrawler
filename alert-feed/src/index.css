@@ -1,9 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,4 +9,108 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.header {
+    color: white;
+    background-color: #383838;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.alerts {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 800px) {
+    .alerts{
+        flex-direction: column;
+    }
+}
+
+
+.alerts-left {
+    flex: 30%;
+    padding: 16px;
+    margin: 16px;
+    min-width: 300px;
+}
+
+.alerts h1 {
+    text-align: left;
+    font-size: 6em;
+    font-weight: 600;
+}
+
+/* FILTERS ------------------------------------------------ **/
+
+.filters {
+    text-align: left;
+}
+
+.keyword {
+    padding: 4px 8px;
+    margin: 4px 8px;
+    background: white;
+    color: black;
+    border: 1px solid;
+    border-radius:8px;
+    white-space: nowrap;
+}
+
+.keyword-selected {
+    padding: 4px 8px;
+    margin: 4px 8px;
+    background: #383838;
+    color: white;
+    border-radius:8px;
+    white-space: nowrap;
+}
+
+.filter-item:hover {
+    cursor: pointer;
+    background: #787878;
+}
+
+.alerts-right {
+    flex: 60%;
+    padding: 16px;
+}
+
+.alert-item:not(:first-child) {
+    border-top: 1px solid #484848;
+}
+
+/* ALERT ITEM DATA  --------------------------------*/
+
+.alert-item {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.alert-item div {
+    margin: 4px;
+}
+
+.alert-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.alert-type {
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+.alert-location {
+    font-size: 2.5em;
+}
+
+.alert-keywords {
+
 }
