@@ -1,0 +1,9 @@
+[
+    ["Jerome County, Idaho",
+    "https://www.jeromecountyid.us/AgendaCenter/",
+    "<td class=\"minutes\".+href=\"/AgendaCenter/(.+?)\".+<\/a>"],
+
+    ["Charlton County, Georgia",
+    "https://charltoncountyga.us/AgendaCenter/",
+    "<td class=\"minutes\".+href=\"/AgendaCenter/(.+?)\".+<\/a>"]
+]

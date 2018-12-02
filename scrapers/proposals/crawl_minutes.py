@@ -3,18 +3,13 @@ import csv
 import re
 import get_words
 import words
+import json
 # TODO: import this config from a CSV file:
 # location,minutes_url,minutes_regex
-sources = [
-    ["Jerome County, Idaho",
-    "https://www.jeromecountyid.us/AgendaCenter/",
-    "<td class=\"minutes\".+href=\"/AgendaCenter/(.+?)\".+<\/a>"],
 
-    ["Charlton County, Georgia",
-    "https://charltoncountyga.us/AgendaCenter/",
-    "<td class=\"minutes\".+href=\"/AgendaCenter/(.+?)\".+<\/a>"]
-]
-
+jt = open('sources.json')
+sources = json.loads(jt.read())
+jt.close()
 
 with open('rumor_proposals.csv', mode='w') as proposals_file:
 
@@ -23,7 +18,7 @@ with open('rumor_proposals.csv', mode='w') as proposals_file:
 
     for [location, minutesUrl, minutesRegex] in sources:
         ## minutesUrl = 'https://charltoncountyga.us/AgendaCenter/'
-        ## minutesRegex = '<td class="minutes".+href="/AgendaCenter/(.+?)".+<\/a>'
+        ## minutesRegex = '<td class="minutes".+href="/AgendaCenter/(.+?)".+<\/ajt
 
         r = requests.get(minutesUrl, verify=False)
         p = re.compile(minutesRegex)
