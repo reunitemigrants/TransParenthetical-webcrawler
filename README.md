@@ -17,13 +17,17 @@ Media | News articles are being published in local communities to notify and dis
 Permits | In the process of creating detention centers, we imagine companies will require construction permits. We can crawl construction permit datasets to trigger alerts when new construction is starting.
 Proposals | In the process of creating detention centers, we imagine local county meetings have mentions of creating detention centers. We can crawl meeting notes to trigger alerts when relevant keywords are mentioned.
 
+Mobile Mock | Desktop Mock (courtesy of @holly!)
+----- | -----
+![mobile mock](https://raw.githubusercontent.com/reunitemigrants/TransParenthetical-webcrawler/master/mocks/alert_feed__expanded_.png) | ![desktop mock](https://raw.githubusercontent.com/reunitemigrants/TransParenthetical-webcrawler/master/mocks/desktop_hd.png)
+
 ----
 
 ### Project Structure
 
 See subdirectory README.md for each component for more details.
 ```
-/alert-feed      - main frontend application 
+/alert-feed      - main frontend application
 /scrapers        - collection of data source scrapers
   /lobbyists       - status: scraping data, not yet writing to CSV
   /media           - status: no progress
@@ -36,4 +40,6 @@ Each scraper is focused on generating CSV file feeds for each source, with the f
 
 ### Next Steps
 
-Ideally, 
+- `/alert-feed` needs to connect with actual CSV outputs
+- `/lobbyists` needs to write relevant contributions to CSV files
+- `/proposals` needs to connect CSV output to main frontend app

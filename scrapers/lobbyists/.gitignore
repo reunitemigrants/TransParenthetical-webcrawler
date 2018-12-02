@@ -113,3 +113,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# downloaded data files
+candidates*.zip
+committees*.zip
+contributions*.zip
+cross_committees_transactions_*.zip
+linkages*.zip
