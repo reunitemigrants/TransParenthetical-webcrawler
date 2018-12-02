@@ -7,9 +7,8 @@ import json
 # TODO: import this config from a CSV file:
 # location,minutes_url,minutes_regex
 
-jt = open('sources.json')
-sources = json.loads(jt.read())
-jt.close()
+with open('sources.json') as jt:
+    sources = json.loads(jt.read())
 
 with open('rumor_proposals.csv', mode='w') as proposals_file:
 
