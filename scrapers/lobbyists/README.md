@@ -1,7 +1,12 @@
 # Overview
 
 ## Setup
-Install virtualenv and run: `pip install -U -r requirements.txt`
+1. Install virtualenv
+1. Create a virtual environment: `virtualenv venv`
+    * If Python 3 isn't the default for your system, use: `virtualenv -p python3 venv`
+1. Activate the virtual environment: `. venv/bin/activate`
+    * The virtual environment needs to be active when running any of the scripts
+1. Install dependencies: `pip install -U -r requirements.txt`
 
 ## Scripts
 
