@@ -80,6 +80,8 @@ def main():
     print("# Candidates:", len(candidates))
     print("Sample Candidates:", candidates[:3])
 
+    # TODO: create alerts on new candidates or new contributions to candidates
+
 
 if __name__ == "__main__":
     main()
