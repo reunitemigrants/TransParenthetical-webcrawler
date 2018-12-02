@@ -1,8 +1,8 @@
 import requests
 import csv
 import re
-import download
-
+import get_words
+import words
 # TODO: import this config from a CSV file:
 # location,minutes_url,minutes_regex
 sources = [
@@ -37,11 +37,11 @@ with open('rumor_proposals.csv', mode='w') as proposals_file:
             with open('target.pdf', 'wb') as ff:
                 ff.write(targetReq.content)
 
-            pdf = download.convert_pdf_to_txt('target.pdf')
-            print(pdf)
+            keywords = get_words.get_keywords_from_file('target.pdf')
+            
 
             # # TODO: make call to determine if PDF contains relevant keywords
-            relevant = True
+            relevant = words.contains_keywords(keywords)
 
             if relevant:
                 csvwriter.writerow(['DATE', 'proposals', targetUrl, location, 'BLOB_TEXT'])
